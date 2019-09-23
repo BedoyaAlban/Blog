@@ -1,0 +1,27 @@
+Options +FollowSymlinks
+
+RewriteEngine On
+RewriteBase /blog
+#--------------------------------------------------
+# Répertoire : /blog/
+#--------------------------------------------------
+
+# Le serveur doit suivre les liens symboliques :
+# Options +FollowSymlinks
+
+# Activation du module de réécriture d'URL :
+# RewriteEngine on
+# RewriteBase /blog
+
+#--------------------------------------------------
+# Règles de réécriture d'URL :
+#--------------------------------------------------
+
+RewriteRule ^([a-zA-Z]*)$ index.php?action=$1 [L]
+
+RewriteRule ^allPosts-([0-9]*)$ index.php?action=allPosts&page=$1 [L]
+
+RewriteRule ^Signaler-([0-9]*)-([0-9]*)$ index.php?action=Signaler&id=$1&postid=$2 [L]
+
+RewriteRule ^([a-zA-Z]*)-([0-9]*)$ index.php?action=$1&id=$2 [L]
+
